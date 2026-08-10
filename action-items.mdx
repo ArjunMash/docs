@@ -6,6 +6,7 @@ description: "Tracking management's remediation of observations through to verif
 Action items reference back to Observations. Each action item refers to one observation, while an observation can have multiple action items. This allows complex observations — ones that require multiple process owners or multiple steps to address — to be modeled cleanly instead of forced into a single task.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryBorderColor":"#16a34a","primaryTextColor":"#111827","lineColor":"#64748b","clusterBkg":"#f1f5f9","clusterBorder":"#64748b","titleColor":"#334155","edgeLabelBackground":"#e2e8f0","fontFamily":"ui-sans-serif, system-ui, sans-serif"},"flowchart":{"curve":"basis"}}}%%
 graph LR
   OBS["Observation<br/>(what the audit found)"] --> AI1["Action Item<br/>Owner: Process Owner A"]
   OBS --> AI2["Action Item<br/>Owner: Process Owner B"]
@@ -38,3 +39,32 @@ An observation is resolved only when **all** of its action items are verified �
 - **No Longer Applicable** — with a documented rationale
 
 Overdue items carry management's explanation for the delay and the CAE's determination on whether continued inaction amounts to accepting risk beyond tolerance.
+
+## Lifecycle
+
+An action item is assigned to its owner, who submits the **management action plan**; the plan is reviewed (and can be returned) before work begins. When management reports the work done, the owner submits **proof of completion**, which goes to **CAE review** — with a rework loop — before the item completes. Alongside completion, an item can exit as **Risk Accepted** (the plan was abandoned and the CAE determined the risk is formally accepted) or **Withdrawn**.
+
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryBorderColor":"#16a34a","primaryTextColor":"#111827","lineColor":"#64748b","clusterBkg":"#f1f5f9","clusterBorder":"#64748b","titleColor":"#334155","edgeLabelBackground":"#e2e8f0","fontFamily":"ui-sans-serif, system-ui, sans-serif"},"flowchart":{"curve":"basis"}}}%%
+flowchart LR
+  subgraph OWN["Owner (Auditee)"]
+    MAP["Submit management<br/>action plan"]
+    IMP["Implement<br/>the action"]
+    POC["Submit proof<br/>of completion"]
+  end
+  subgraph AUD["Audit team"]
+    CA[["Create from an<br/>Observation ↗"]]
+    PR{"Review plan"}
+    CR{"CAE review<br/>of proof"}
+    DONE["Completed"]
+    RA["Risk Accepted"]
+  end
+  CA --> MAP --> PR
+  PR -- "returned" --> MAP
+  PR -- "agreed" --> IMP --> POC --> CR
+  CR -- "rework" --> POC
+  CR -- "verified" --> DONE
+  PR -. "plan abandoned" .-> RA
+  classDef case fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+  class CA case
+```

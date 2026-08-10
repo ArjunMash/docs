@@ -5,14 +5,20 @@ description: "Auditable units, enterprise risks, focus areas and audit types —
 
 The audit universe is the configured map of everything your department could audit. It's what makes Recap IA risk-based: engagements are scoped from the universe, and what each engagement learns flows back into it.
 
-## Auditable Units
+## Universe Categories and Auditable Units
 
-Auditable units are the overarching data structure storing information about an entity that can be audited.
+The universe is a two-tier taxonomy: **Universe Categories** (e.g. Expense, Revenue) at the top, with **Auditable Units** filed under them. Controls carry a Function; a control's category follows from the unit it belongs to — one taxonomy, one source of truth.
 
-- Auditable units carry their **Category** (e.g. Expense, Revenue) — the top tier of the taxonomy. Controls carry a Function; a control's category follows from the entity it belongs to.
-- Auditable units store data **across** engagements — when the same unit is audited again next cycle, its history, risks and controls are already there.
+Auditable units are the overarching data structure storing information about an entity that can be audited. Each unit carries:
 
-{/* TODO: full auditable unit field list, and how the next-audit cadence is determined */}
+- Its **Universe Category** and **Audit Type** — where it sits in the universe and what kind of audit work it receives.
+- The **Enterprise Risks** flagged as relevant to it.
+- Its **Process Areas** and **Relevant Controls** — retained across engagements, so the next audit of this unit starts from a known map instead of a blank page.
+- Its **engagement history** — every audit that has covered it.
+
+This is what makes Recap IA cumulative: units remember, engagements borrow.
+
+{/* TODO: how the next-audit cadence is determined */}
 {/* Roadmap note (decided 2026-08-09): risk rating on auditable units deferred until annual planning becomes a feature */}
 
 ## Enterprise Risks

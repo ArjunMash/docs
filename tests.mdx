@@ -5,6 +5,46 @@ description: "One case per step of the work program — purpose, procedure, samp
 
 Tests are child cases of the Engagement, created in the Programming stage — one per step of the audit program. The work program is the set of Tests: approving it and executing it happens through them, and each test owns its own [workpaper](/document-templates#workpaper) in SharePoint.
 
+## Lifecycle
+
+Each test runs through its own stages:
+
+1. **Planning** — the test is planned (pre-filled from its control, then tailored) and goes to **Manager Review**. The reviewer approves the test's procedures — or sends them back for rework — **before any fieldwork begins**, so every test's work program is approved prior to execution, test by test.
+2. **In Progress** — on approval, Recap IA automatically creates the test's SharePoint folder and its pre-populated workpaper. Auditors execute the test, then record observations, which are submitted for CAE approval (with a return-for-rework loop).
+3. **Completed** — the auditor makes the [roll-back choice](#pre-filled-from-the-control-library): whether tailored purpose/procedure updates the control library's canonical standard.
+
+A test can also be **Withdrawn** at any point — descoped, not silently deleted.
+
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryBorderColor":"#16a34a","primaryTextColor":"#111827","lineColor":"#64748b","clusterBkg":"#f1f5f9","clusterBorder":"#64748b","titleColor":"#334155","edgeLabelBackground":"#e2e8f0","fontFamily":"ui-sans-serif, system-ui, sans-serif"},"flowchart":{"curve":"basis"}}}%%
+flowchart LR
+  subgraph SYS["Recap IA"]
+    PF["Pre-fill from<br/>control library"]
+    SP["Create SharePoint<br/>folder + workpaper"]
+    RB["Roll adjustments<br/>back to library"]
+  end
+  subgraph AUD["Auditor"]
+    PT["Plan the test"]
+    FW["Fieldwork in<br/>workpaper"]
+    ER[["Raise evidence requests<br/>(Evidence Request cases ↗)"]]
+    RO["Record<br/>observations"]
+    UC{"Update control<br/>library?"}
+  end
+  subgraph MGR["Audit Manager (CAE)"]
+    MR{"Manager review"}
+    OA{"Approve<br/>observations"}
+  end
+  PF --> PT --> MR
+  MR -- "rework" --> PT
+  MR -- "approved" --> SP --> FW --> RO --> OA
+  FW -.-> ER
+  OA -- "rework" --> RO
+  OA -- "approved" --> UC
+  UC -- "yes" --> RB
+  classDef case fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+  class ER case
+```
+
 ## Pre-filled from the control library
 
 When a test references a control, Recap IA pre-fills the test from the [control library](/controls), so standard tests don't get retyped every engagement:
@@ -12,7 +52,7 @@ When a test references a control, Recap IA pre-fills the test from the [control 
 | Control library field | Pre-fills on the Test |
 | --- | --- |
 | Standard Objective | Test Purpose |
-| Standard Test Procedure | Test Procedure |
+| Standard Procedure | Procedure |
 
 The auditor then tailors both to the engagement.
 
@@ -22,9 +62,12 @@ The flow works in reverse too: at the end of the test, if the pre-filled purpose
 
 | Field | Description |
 | --- | --- |
-| Reference Control | The control this test evaluates. Optional — substantive or analytical work, control gaps, and entity-level work may have no control to route through. |
+| Control | The control library entry this test evaluates. Optional — substantive or analytical work, control gaps, and entity-level work may have no control to route through. |
 | Related Risk | The risk the test addresses. When a control is referenced, risk coverage is derived through the control; the direct link matters most when there is no control. |
-| Related Engagement Objective | The engagement objective this test supports — so coverage can be checked in both directions: every objective has at least one test, every test serves at least one objective. |
+| Related Objective | The engagement objective this test supports — so coverage can be checked in both directions: every objective has at least one test, every test serves at least one objective. |
+| Process Area | The process area the test covers. |
+| Assigned Auditors | Who executes the test — assignment drives workpaper edit access during fieldwork. |
+| Assigned Reviewer | The Audit Manager who reviews and approves this test. |
 | Test Purpose | Rich text. What this test concludes about, relative to its control and the engagement. |
 | Procedure | Rich text. The steps performed — written so a prudent, informed person could repeat the work and reach the same conclusion: source of items, action taken, comparison basis, what counts as an exception, what evidence to retain. |
 | Test Window Start / End | The scope period — the window the tested population covers (not when the testing work happens). |
@@ -49,4 +92,4 @@ Conclusions are never derived from the absence of observations: zero observation
 
 ## Observations and review
 
-Observations found during testing are [documented within the test](/observations). Once all of a test's observations are recorded, the list is submitted and approved by the CAE.
+Observations found during testing are [documented within the test](/observations). Once all of a test's observations are recorded, the list is submitted and approved by the CAE — or returned with the reviewer's feedback for rework.

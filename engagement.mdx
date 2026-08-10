@@ -36,21 +36,64 @@ The Engagement is the root case of every audit. It moves through six stages, spa
   **Report issuance locks the record.** When the report is issued, observations lock — condition, criteria, root cause, effect, rating and recommendation become immutable, with a CAE unlock (reason required, audit-trailed) for corrections. Action items and dispositions stay editable through follow-up.
 </Info>
 
-## Engagement dates — two families
+## Who does what
 
-Engagement date fields separate cleanly into two families, so nobody filters on the wrong axis:
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryBorderColor":"#16a34a","primaryTextColor":"#111827","lineColor":"#64748b","clusterBkg":"#f1f5f9","clusterBorder":"#64748b","titleColor":"#334155","edgeLabelBackground":"#e2e8f0","fontFamily":"ui-sans-serif, system-ui, sans-serif"},"flowchart":{"curve":"basis"}}}%%
+flowchart LR
+  subgraph SYS["Recap IA"]
+    F["Create SharePoint<br/>folders"]
+    PM["Generate<br/>planning memo"]
+    RG["Generate<br/>draft report"]
+  end
+  subgraph AUD["Auditor"]
+    CE["Create<br/>engagement"]
+    SC["Scoping"]
+    RM["Risk matrix"]
+    CT[["Create tests<br/>(Test cases ↗)"]]
+    TR[["Run tests<br/>(Test cases ↗)"]]
+    AR["Refine report"]
+    TI[["Track action items<br/>(Action Item cases ↗)"]]
+  end
+  subgraph CAE["Audit Manager (CAE)"]
+    PA{"Approve plan"}
+    RA{"Approve report"}
+  end
+  CE --> F --> SC --> RM --> PA
+  PA -- "rework" --> SC
+  PA -- "approved" --> PM --> CT --> TR --> RG --> AR --> RA
+  RA -- "rework" --> AR
+  RA -- "issued" --> TI
+  classDef case fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+  class CT,TR,TI case
+```
 
-| Family | Fields | Meaning |
-| --- | --- | --- |
-| **Scope dates** | Scope Period Start / End | The period under review — the data window the audit covers. |
-| **Schedule dates** | Fieldwork Start / End, Planned Completion, Actual Completion, Report Issued | When the work happens. |
+**Double-bordered boxes are case boundaries** — the flow crosses into another case type that runs its own workflow: see the swimlanes on [Tests](/tests#lifecycle), [Evidence Requests](/evidence-requests#review-loop) and [Action Items](/action-items#lifecycle).
 
-The same distinction applies on each test: the [Test Window](/tests#test-fields) is a scope date — the period its population covers.
+## Key fields
 
-## Create Engagement
-
-{/* TODO: fill in the fields collected at engagement creation */}
+At creation, the engagement captures its identity and configuration anchors:
 
 | Field | Description |
 | --- | --- |
-|  |  |
+| Name / Description | What this engagement is. |
+| Audit Type | The kind of audit work (e.g. FX, FO, CR, IT, FD — [your configured types](/audit-universe#audit-types)). |
+| Enterprise Risk | The ERM risk this engagement addresses. |
+| Company Focus Area | The organizational focus area the engagement relates to. |
+| Expected Completion Date | When the engagement is planned to finish — a schedule date. |
+
+During Planning, the engagement's substance is built out — first in **Scoping**:
+
+| Field | Description |
+| --- | --- |
+| Scope | Narrative scope — what is and isn't covered. |
+| Scope Period Start / End | The period under review — the data window the audit covers. A **scope** date, deliberately separate from schedule dates so nobody filters on the wrong axis. |
+| Objectives | The engagement's objective list — every test maps back to one, so coverage can be checked in both directions. |
+| Related Information Systems | The systems in scope. |
+| Assigned Auditors / Auditees | Who's staffed on the audit, and who on the business side responds to it. |
+| Audit Purpose / Audit Approach | Why the audit is being performed, and how it will be conducted. |
+| Policies Reviewed | The policies and procedures reviewed — the sources later cited as criteria. |
+
+Then in the **Risk Matrix**, process areas are laid out with their risks (each rated for Likelihood and Impact and mapped to an objective), the walkthrough date and planning preparer/reviewer are recorded, and the whole plan is **submitted for approval**.
+
+The scope-vs-schedule distinction carries down to each test: the [Test Window](/tests#test-fields) is a scope date — the period its population covers, not when the testing happens.
