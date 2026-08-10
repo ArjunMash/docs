@@ -1,9 +1,9 @@
 ---
 title: "Data Model"
-description: "How engagements, tests, risks, controls and people relate to each other"
+description: "How engagements, tests, risks, controls and users relate to each other"
 ---
 
-Recap IA is object oriented: every piece of data you touch is related to the others. There are three layers — **cases** (work that moves through a lifecycle), **data objects** (your organization's reference library, reused across engagements), and **configuration** (fixed lists from your organization, set up once).
+Recap IA is object oriented: every piece of data you touch is related to the others. There are three layers: **cases** (work that moves through a lifecycle), **data objects** (your organization's reference library, reused across engagements), and **configuration** (fixed lists from your organization, set up once).
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryBorderColor":"#16a34a","primaryTextColor":"#111827","lineColor":"#64748b","clusterBkg":"#f1f5f9","clusterBorder":"#64748b","titleColor":"#334155","edgeLabelBackground":"#e2e8f0","fontFamily":"ui-sans-serif, system-ui, sans-serif"},"flowchart":{"curve":"basis"}}}%%
@@ -53,39 +53,44 @@ Cases are the units of work. Each has its own lifecycle, assignments and approva
 
 | Case Type | What it is |
 | --- | --- |
-| **Engagement** | The root case: one audit, run from planning through reporting. Everything else hangs off it. |
-| **Test** | A child case of the Engagement, one per step of the work program — the work program *is* the set of Tests. Each carries its purpose, procedure, sampling and window, links to the control and risk it covers, and owns its workpaper. See [Tests](/tests). |
-| **Evidence Request** | An engagement-level request to an auditee for support documents, linked to the test(s) it supports and tracked to fulfillment. See [Evidence Requests](/evidence-requests). |
-| **Observation** | A deficiency or gap, documented within the test that found it (or directly on the engagement for findings outside testing). Approved by the CAE, locked at report issuance. See [Observations](/observations). |
-| **Action Item** | A management action referencing one Observation, tracked to completion. A child case of the Engagement that persists after the report is issued. See [Action Items](/action-items). |
+| **Engagement** | The primary case: one audit, run from planning through reporting. Connects to multiple data objects and all other cases hangs off it. |
+| **Test** | A child case of the Engagement, one per step of the work program.  In other words, the work program _is_ the set of Tests. Each carries its purpose, procedure, sampling and window. Tests link to their parent control and the engagement risk it covers. Each test has a workpaper. See [Tests](/tests). |
+| **Evidence Request** | A request to an auditee for support documents, linked to the test(s) it supports and tracked to fulfillment with regular email notification. See [Evidence Requests](/evidence-requests). |
+| **Observation** | A deficiency or gap, documented within the test that found it (or directly on the engagement for findings outside testing). Reviewed by the CAE at the conclusion of the test, and locked at report issuance. See [Observations](/observations). |
+| **Action Item** | A management action referencing one Observation, tracked to completion. Importantly, these persist even after a report is issued. See [Action Items](/action-items). |
 
-**Risks** sit between the configuration and the cases: each engagement's Risk Matrix is made of engagement-specific Risk records — the risks as assessed *for this audit*, each rated for **Likelihood × Impact** and grouped under a **Process Area**. Enterprise Risks from your ERM are flagged at the engagement level.
+Two primary forms of risks exist: 
+
+1. **Risks** that live at an engagement level
+2. **Enterprise Risks** which are a configured list inherited from your ERM and are referenced at the engagement plan. 
+
+**E**ach engagement's Risk Matrix is made of engagement-specific Risk records: the risks as assessed _for this audit_, with each rated for **Likelihood × Impact** and grouped under a **Process Area**. 
 
 ## Data Objects
 
-Data objects are your organization's audit universe — configured once and referenced by every engagement, so knowledge accumulates across audits instead of being rebuilt each time.
+Data objects support your organization's unique audit universe. They are referenced across engagements, and help allow knowledge to accumulate across audits instead of being rebuilt each time.
 
 | Data Object | What it is |
 | --- | --- |
 | **Universe Categories** | The top tier of the taxonomy (e.g. Expense, Revenue). Every auditable unit belongs to one. |
-| **Auditable Units** | The entities that can be audited. Carry their Universe Category and Audit Type, and store process areas, relevant controls and engagement history across engagements. |
+| **Auditable Units** | The entities that can be audited. Each contain a Universe Category and Audit Type, and store process areas, relevant controls and engagement history across engagements. <br /><br />Units can be regulatory frameworks, business units or something unique to your organization. |
 | **Controls** | The control library, grouped by Function. Selecting a control on a test pre-fills the test's purpose and procedure. See [Controls](/controls). |
-| **Information Systems** | The systems controls run on, related to each control. |
+| **Information Systems** | A simple log of the systems your organization runs on and that your audits touch. When relevant, systems tie to related controls. |
 
 ## Configuration
 
-Fixed lists that tailor Recap IA to your organization — they come from documents you already maintain, not from the audit team's day-to-day work.
+Fixed lists that tailor Recap IA to your organization. While adjustments can be processed made by CAEs, these lists are typically not adjusted as frequently as other data objects. 
 
 | Configuration | What it is |
 | --- | --- |
 | **Enterprise Risks** | The fixed risk list from your ERM function, flagged on each engagement it applies to. |
 | **Focus Areas** | Organization-defined lenses that engagements relate to alongside enterprise risks, where your methodology requires it. |
-| **Audit Types** | Your classification of audit work across the universe — for example FX (Financial Statement), FO (Financial Operational), CR (Compliance/Regulatory), IT (Info Security), FD (Fiduciary). |
+| **Audit Types** | Your classification of audit work across the universe.  E.g. FX (Financial Statement), FO (Financial Operational), CR (Compliance/Regulatory), IT (Info Security), FD (Fiduciary). |
 
 ## Users
 
 | Role | What they do |
 | --- | --- |
 | **Auditor** | Runs assigned tests: fieldwork, workpapers, observations. |
-| **Audit Manager** | Reviews and approves — planning memos, submitted workpapers, observations and draft reports. Acts as the CAE in the standard configuration. |
+| **Audit Manager** | Reviews and approves across planning memos, submitted workpapers, observations and draft reports. <br /><br />Acts as the CAE in the standard configuration. |
 | **Auditee / Process Owner** | Responds to evidence requests and owns action items. External users: they access Recap IA through an emailed magic link — no account or full login required. |
