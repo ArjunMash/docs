@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Recap IA",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -12,67 +12,43 @@
     "dark": "/images/RecapDarkFavicon.png"
   },
   "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    },
     "groups": [
       {
         "group": "Getting Started",
         "pages": [
           "index",
-          "untitled-page"
+          "data-model"
         ]
       },
       {
         "group": "Configure Environment",
         "pages": [
-          "untitled-page-3",
-          "untitled-page-6",
-          "untitled-page-4",
-          "untitled-page-7"
-        ]
-      },
-      {
-        "group": "Case Flow",
-        "pages": [
-          "untitled-page-8",
-          "untitled-page-9"
+          "audit-universe",
+          "information-systems",
+          "controls",
+          "document-templates"
         ]
       },
       {
         "group": "Running an Engagement",
-        "pages": []
+        "pages": [
+          "engagement",
+          "tests",
+          "evidence-requests",
+          "observations",
+          "action-items"
+        ]
       },
       {
         "group": "Managing Users",
         "pages": [
-          "untitled-page-5"
+          "auditors-managers"
         ]
       },
       {
-        "group": "Sharepoint Integration",
+        "group": "Integrations",
         "pages": [
-          "untitled-page-2"
+          "sharepoint-fieldwork"
         ]
       }
     ]
@@ -86,14 +62,9 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:arjun@recap.run"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
@@ -106,12 +77,5 @@
       "cursor",
       "vscode"
     ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
   }
 }

@@ -1,0 +1,49 @@
+---
+title: "Observations"
+description: "How findings are documented, rated, approved and locked"
+---
+
+An observation records a deficiency or gap. Observations are created from tests by default and stamped with the test that found them; an observation can also be created outside testing — a design deficiency, a missing control, something surfaced in a walkthrough — and attaches directly to the engagement.
+
+One observation can cover multiple exceptions stemming from the same cause: findings sharing a root cause are written as **one** observation with a broader condition, not scattered into several.
+
+## The four-part finding
+
+Every observation is built from four fields that read as a chain: **Criteria** and **Condition** establish the gap, **Root Cause** explains it, **Effect** justifies the rating. If the Effect doesn't support the Risk Level, one of the two is wrong.
+
+| Field | What goes in it |
+| --- | --- |
+| **Condition** | What was found — facts only: what is happening, where, how often, with quantities where testing supports them. "Reviews were not performed" is a condition; "access controls are weak" is an opinion. |
+| **Criteria** | What should be, with the specific source cited — policy name and section, procedure, regulation, contract — not a paraphrased general expectation. |
+| **Root Cause** | The underlying reason the condition exists, developed in discussion with management. If a sentence is still true with "because" removed, it isn't a root cause. |
+| **Effect** | The risk or exposure created by the gap — what could happen or has happened, and to whom. Quantify where feasible; label estimates as estimates. |
+
+Keep the whole finding around 150–250 words. Communication is required to be concise — background narration belongs in the report's own sections, and workpaper detail stays in the workpaper.
+
+## Rating
+
+`Risk Level` (High / Medium / Low) **is** the significance determination — there is no separate significance field. It is retrospective: the urgency of remediation, reflecting impact, likelihood and compensating controls.
+
+`Action Item Required` defaults from the Risk Level and can be manually overridden — a warning, not a hard block, because some significant findings legitimately close through risk acceptance or correction during fieldwork.
+
+## Management's position
+
+Management's response is captured on the observation: their written response, whether they agree with the finding (Agreed / Partially / Disagreed), and when it was discussed. Agreement with the *finding* lives here; agreement with the *remediation plan* lives on the [Action Item](/action-items) — management can accept one and dispute the other.
+
+## Disposition
+
+Every observation ends in one of:
+
+- **Action Item Created**
+- **Corrected During Fieldwork**
+- **Communicated to Management, No Plan Requested**
+- **Risk Accepted**
+- **Not Reported**
+
+A rationale is required whenever the value isn't "Action Item Created" — an unaddressed observation must be distinguishable from an unevaluated one.
+
+## Approval and locking
+
+Observations are approved **within the test**: once all of a test's observations are recorded, the list is submitted and approved by the CAE.
+
+Observations stay editable through reporting — root cause and recommendation feasibility are developed with management and often aren't settled until late. They lock at **final report issuance**: condition, criteria, root cause, effect, rating and recommendation become immutable, while linked action items and disposition remain editable. A supervisor/CAE unlock exists for corrections — it requires a reason and writes an audit trail entry.

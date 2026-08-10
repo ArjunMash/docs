@@ -1,0 +1,29 @@
+---
+title: "Controls"
+description: "The control library: one clean, deduplicated set of controls reused across engagements"
+---
+
+Controls live in a library, so the same control can be tested year over year without being re-entered — and so results accumulate against a stable record. When a test references a control, the library's standard objective and procedure [pre-fill the test](/tests#pre-filled-from-the-control-library).
+
+## Control fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| Name | Text | The control's name. Together with Function, uniquely identifies the control. |
+| Function | Picklist | The process the control belongs to (e.g. Procurement, Financial Reporting, AP). |
+| Standard Objective | Rich text | What the control is meant to achieve. Pre-fills a referencing test's Test Purpose. |
+| Standard Test Procedure | Rich text | How the control is tested. Pre-fills a referencing test's Procedure. |
+| Frequency | Picklist | Annual / Quarterly / Monthly / Weekly / Daily / Multiple times a day. |
+| Control Type | Picklist | Preventive / Detective. |
+| Control Nature | Picklist | Manual / Automated. |
+| Related Information Systems | Reference | The systems the control operates in. |
+
+## The library learns
+
+Pre-filling isn't one-way. When a test's pre-filled purpose or procedure gets adjusted during testing, the auditor decides at the end of the test whether the adjustments roll back into the library as the control's new canonical standard. The library stays current with how controls are actually tested — without every engagement's one-off tweak overwriting it.
+
+## Duplicate detection
+
+A control library is only useful if it stays clean. When a new control is entered, Recap IA compares it against existing controls in the same function using AI-based fuzzy matching — catching duplicates that exact-match checks miss (reworded names, same control described two ways).
+
+If a likely duplicate is found (high-confidence match), the auditor is shown the suggested existing control and chooses: use the existing entry, or override and create the new one anyway. The auditor always has the final say.

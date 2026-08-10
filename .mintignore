@@ -5,3 +5,6 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Source material for docs work — never published
+docs-for-claude/

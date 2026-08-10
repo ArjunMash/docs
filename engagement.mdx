@@ -1,0 +1,56 @@
+---
+title: "Engagement"
+description: "The end-to-end engagement lifecycle, from creation through action-item tracking"
+---
+
+The Engagement is the root case of every audit. It moves through six stages, spawning child cases (Tests, Evidence Requests, Action Items) and generating documents (Planning Memo, Workpapers, Audit Report) along the way.
+
+<Frame caption="The Engagement lifecycle in Recap IA">
+  ![Engagement lifecycle](/images/Screenshot-2026-08-07-at-12.28.43-PM.png)
+</Frame>
+
+## Lifecycle
+
+<Steps>
+  <Step title="Create Audit Engagement">
+    Collect the engagement's details. On creation, Recap IA automatically creates the engagement's folder structure in SharePoint (if the [SharePoint integration](/sharepoint-fieldwork) is configured).
+  </Step>
+  <Step title="Planning">
+    Scope the engagement and build the risk matrix — engagement-specific risk records assessed for this audit. The CAE reviews the scope, and can send it back for rework. Once approved, Recap IA generates the **Planning Memo** as a PDF for final review before fieldwork begins.
+  </Step>
+  <Step title="Programming">
+    Risks embedded in the engagement are synced, and **[Tests](/tests)** are created as child cases — one per step of the audit program, each pre-filled from the control library and carrying its purpose, procedure, window and sampling plan.
+  </Step>
+  <Step title="Field Work">
+    Auditors execute their tests and complete workpapers. As each test's observations are recorded, the list is submitted and **approved by the CAE**. The engagement waits for all tests to be submitted and reviewed before moving on.
+  </Step>
+  <Step title="Reporting">
+    On the move into Reporting, an automation generates the draft **Audit Report** — pulling the engagement's fields, observations, and the status of action items (complete, risk accepted, in progress, overdue) — and places it in SharePoint. Auditors open it from the app to adjust formatting and text; from that point it's their responsibility to keep the deck aligned with the documentation. The CAE reviews, and can send it back to drafting, before the report is issued.
+  </Step>
+  <Step title="Tracking Action Items">
+    Management's action plans are tracked as **[Action Item](/action-items)** cases until each observation's actions are verified. Action items persist after the report is issued, so follow-up continues without reopening the audit.
+  </Step>
+</Steps>
+
+<Info>
+  **Report issuance locks the record.** When the report is issued, observations lock — condition, criteria, root cause, effect, rating and recommendation become immutable, with a CAE unlock (reason required, audit-trailed) for corrections. Action items and dispositions stay editable through follow-up.
+</Info>
+
+## Engagement dates — two families
+
+Engagement date fields separate cleanly into two families, so nobody filters on the wrong axis:
+
+| Family | Fields | Meaning |
+| --- | --- | --- |
+| **Scope dates** | Scope Period Start / End | The period under review — the data window the audit covers. |
+| **Schedule dates** | Fieldwork Start / End, Planned Completion, Actual Completion, Report Issued | When the work happens. |
+
+The same distinction applies on each test: the [Test Window](/tests#test-fields) is a scope date — the period its population covers.
+
+## Create Engagement
+
+{/* TODO: fill in the fields collected at engagement creation */}
+
+| Field | Description |
+| --- | --- |
+|  |  |
