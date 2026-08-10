@@ -1,29 +1,28 @@
 ---
 title: "Audit Universe"
-description: "Auditable units, enterprise risks, focus areas and audit types — the map of what can be audited"
+description: "Auditable units, enterprise risks, focus areas and audit types."
 ---
 
-The audit universe is the configured map of everything your department could audit. It's what makes Recap IA risk-based: engagements are scoped from the universe, and what each engagement learns flows back into it.
+The audit universe is the configured map of everything your department can audit. Engagements are scoped from the universe, and what each engagement learns flows back into it's parent unit.
 
 ## Universe Categories and Auditable Units
 
-The universe is a two-tier taxonomy: **Universe Categories** (e.g. Expense, Revenue) at the top, with **Auditable Units** filed under them. Controls carry a Function; a control's category follows from the unit it belongs to — one taxonomy, one source of truth.
+The universe is separated with a two-tier taxonomy: **Universe Categories** (e.g. Expense, Revenue) at the top, with **Auditable Units** as an additional tag per engagement. 
 
 Auditable units are the overarching data structure storing information about an entity that can be audited. Each unit carries:
 
-- Its **Universe Category** and **Audit Type** — where it sits in the universe and what kind of audit work it receives.
+- Its **Universe Category** and **Audit Type**: where it sits in the universe and what kind of audit work it receives.
 - The **Enterprise Risks** flagged as relevant to it.
-- Its **Process Areas** and **Relevant Controls** — retained across engagements, so the next audit of this unit starts from a known map instead of a blank page.
-- Its **engagement history** — every audit that has covered it.
-
-This is what makes Recap IA cumulative: units remember, engagements borrow.
+- Its **Process Areas**, **Risks** and **Relevant Controls**:  retained across engagements, so the next audit of this unit starts from a known map instead of a blank page.
+- Its **engagement history**,  every audit that has covered the audit is listed as referenced under the unit.
 
 {/* TODO: how the next-audit cadence is determined */}
+
 {/* Roadmap note (decided 2026-08-09): risk rating on auditable units deferred until annual planning becomes a feature */}
 
 ## Enterprise Risks
 
-Enterprise risks are **configuration, not working data**: a fixed list from your organization's ERM function. They are flagged on each engagement they apply to, connecting audit work to the enterprise risk register. The engagement's own risk assessment happens in its [Risk Matrix](/engagement#lifecycle), whose rows are engagement-specific risk records.
+Enterprise risks are typically a **configuration, not working data**: a fixed list from your organization's ERM function. They are flagged on each engagement they apply to, connecting audit work to the enterprise risk register. The engagement's own risk assessment happens in its [Risk Matrix](/engagement#lifecycle), whose rows are engagement-specific risk records.
 
 ## Focus Areas
 
