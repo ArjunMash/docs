@@ -31,7 +31,7 @@ When an Engagement is created, Recap IA creates a folder for it in the document 
 
 | Event in Recap IA | What happens in SharePoint |
 | --- | --- |
-| Engagement is created | Engagement folder created, with `Action Items` and `Notes` subfolders |
+| Engagement is created | Engagement folder structure created |
 | Test is created | Test folder created inside the engagement folder; workpaper template copied in as `{Test Name} Workpaper.xlsx` |
 | Fieldwork | Assigned auditors get **edit** access to their workpaper and open it directly in Excel from the test case |
 | Test submitted for review | Auditors' access is switched to view only; the reviewer receives a **view \+ comment** link. This locks workpapers once fieldwork is complete. |
@@ -39,9 +39,9 @@ When an Engagement is created, Recap IA creates a folder for it in the document 
 ## Access control
 
 - **Auditors** assigned to a test get edit access to that test's workpaper during fieldwork.
-- **Reviewers** (the engagement's Audit Manager) are able to review — view and comment, but not edit — once the workpaper is submitted.
+- **Reviewers** (the engagement's Audit Manager) are able to review, view and comment once the workpaper is submitted.
 - Sharing is managed by Recap IA through Microsoft Graph; no one on the audit team needs to manage SharePoint permissions by hand.
 
 ## Setup requirements
 
-The integration connects through Microsoft Graph using an app registration in your organization's Entra ID tenant, granted `Sites.Selected` access (read and write) to the specific SharePoint site used for audit documents. This means Recap IA can only reach the site you designate — not the rest of your SharePoint environment.
+The integration connects through Microsoft Graph using an app registration in your organization's Entra ID tenant, granted `Sites.Selected` access (read and write) to the specific SharePoint site used for audit documents. This means Recap IA can only reach the site designated by Azure Admins. 
