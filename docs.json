@@ -26,8 +26,7 @@
           "audit-universe",
           "information-systems",
           "controls",
-          "document-templates",
-          "untitled-page"
+          "document-templates"
         ]
       },
       {
@@ -43,7 +42,8 @@
       {
         "group": "Managing Users",
         "pages": [
-          "auditors-managers"
+          "auditors-managers",
+          "untitled-page"
         ]
       },
       {
