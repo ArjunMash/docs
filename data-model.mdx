@@ -53,18 +53,18 @@ Cases are the units of work. Each has its own lifecycle, assignments and approva
 
 | Case Type | What it is |
 | --- | --- |
-| **Engagement** | The primary case: one audit, run from planning through reporting. Connects to multiple data objects and all other cases hangs off it. |
-| **Test** | A child case of the Engagement, one per step of the work program.  In other words, the work program _is_ the set of Tests. Each carries its purpose, procedure, sampling and window. Tests link to their parent control and the engagement risk it covers. Each test has a workpaper. See [Tests](/tests). |
-| **Evidence Request** | A request to an auditee for support documents, linked to the test(s) it supports and tracked to fulfillment with regular email notification. See [Evidence Requests](/evidence-requests). |
+| **Engagement** | The primary case: one audit, spanning planning through reporting. Connects across multiple data objects and other cases hang off it. |
+| **Test** | A child case of the Engagement, one per step of the work program.  In other words, the work program _is_ the set of Tests. Each carries its purpose, procedure, sampling and window. Each test has it's own workpaper. See [Tests](/tests). |
+| **Evidence Request** | A request to an auditee for support documents, linked to the test(s) it supports. These are tracked to fulfillment with regular email notifications sent to owners. See [Evidence Requests](/evidence-requests). |
 | **Observation** | A deficiency or gap, documented within the test that found it (or directly on the engagement for findings outside testing). Reviewed by the CAE at the conclusion of the test, and locked at report issuance. See [Observations](/observations). |
-| **Action Item** | A management action referencing one Observation, tracked to completion. Importantly, these persist even after a report is issued. See [Action Items](/action-items). |
+| **Action Item** | A request for management action referencing the relevant Observation. Importantly, these persist even after reports are issued. See [Action Items](/action-items). |
 
-Two primary forms of risks exist: 
+Two primary forms of risks exist:
 
-1. **Risks** that live at an engagement level
-2. **Enterprise Risks** which are a configured list inherited from your ERM and are referenced at the engagement plan. 
+1. Engagement level **Risks** that are defined per engagement and scoped by process areas.  
+2. And **Enterprise Risks** which are a configured list inherited from your ERM and referenced by Engagements and Auditable Units.
 
-**E**ach engagement's Risk Matrix is made of engagement-specific Risk records: the risks as assessed _for this audit_, with each rated for **Likelihood × Impact** and grouped under a **Process Area**. 
+Each engagement's Risk Matrix is made of engagement-specific **Risk** records: the risks as assessed _for this audit_, with each rated for **Likelihood × Impact** and grouped under a **Process Area**.
 
 ## Data Objects
 
@@ -79,18 +79,18 @@ Data objects support your organization's unique audit universe. They are referen
 
 ## Configuration
 
-Fixed lists that tailor Recap IA to your organization. While adjustments can be processed made by CAEs, these lists are typically not adjusted as frequently as other data objects. 
+System configurations are semi-fixed lists that tailor Recap IA to your organization. These lists can have records added or removed, although these adjustments must be made by the CAE and as as such these lists are typically not adjusted as frequently as other data objects.
 
 | Configuration | What it is |
 | --- | --- |
-| **Enterprise Risks** | The fixed risk list from your ERM function, flagged on each engagement it applies to. |
+| **Enterprise Risks** | The fixed risk list from your ERM function, flagged on each relevant engagement it applies to. |
 | **Focus Areas** | Organization-defined lenses that engagements relate to alongside enterprise risks, where your methodology requires it. |
-| **Audit Types** | Your classification of audit work across the universe.  E.g. FX (Financial Statement), FO (Financial Operational), CR (Compliance/Regulatory), IT (Info Security), FD (Fiduciary). |
+| **Audit Types** | Your classification of different types of audit work across the universe.  E.g. FX (Financial Statement), FO (Financial Operational), etc. |
 
 ## Users
 
 | Role | What they do |
 | --- | --- |
-| **Auditor** | Runs assigned tests: fieldwork, workpapers, observations. |
-| **Audit Manager** | Reviews and approves across planning memos, submitted workpapers, observations and draft reports. <br /><br />Acts as the CAE in the standard configuration. |
-| **Auditee / Process Owner** | Responds to evidence requests and owns action items. External users: they access Recap IA through an emailed magic link — no account or full login required. |
+| **Auditor** | Popualtes assigned steps throughout the engagement and tests. Prepares fieldwork, workpapers and observations. |
+| **Audit Manager** | Reviews and approves at critical steps of the engagement. This includes planning, programming and submitted fieldwork.<br /><br />Acts as the CAE in the standard configuration. |
+| **Auditee / Process Owner** | Responds to evidence requests and owns action items. Auditees are classified as _External users_, meaning they access Recap IA through an emailed magic link. <br /><br />This simplifies their user experience by not requiring a distinct account or full login. |
