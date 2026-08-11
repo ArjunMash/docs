@@ -1,19 +1,20 @@
 ---
 title: "Tests"
-description: "One case per step of the work program"
 ---
 
 Tests are child cases of the Engagement, created in the Programming stage, one per step of the audit program. The work program is the set of Tests: approving it and executing it happens through them, with each test owning its own [workpaper](/document-templates#workpaper).
+
+<Frame caption="Creating a Sample Test using a Control">
+  <video src="/videos/Test-Creation.mp4" controls />
+</Frame>
 
 ## Lifecycle
 
 Each test runs through the following stages:
 
-1. **Planning**: the control the test is covers is selected and the test's procedures and purpose are pre-filled. Auditors then finalize the scope dates, along with the test's population and sampling information. Upon completion this is submitted for  **Manager Review**. Approval is required **before any fieldwork begins**, so every test's work program is approved prior to execution. This ensure's adherence with IIA standard 
-2. **In Progress** — on approval, Recap IA automatically creates the test's SharePoint folder and its pre-populated workpaper. Auditors execute the test, then record observations, which are submitted for CAE approval (with a return-for-rework loop).
-3. **Completed** — the auditor makes the [roll-back choice](#pre-filled-from-the-control-library): whether tailored purpose/procedure updates the control library's canonical standard.
-
-A test can also be **Withdrawn** at any point — descoped, not silently deleted.
+1. **Planning**: the control the test is covers is selected and the test's procedures and purpose are pre-filled. Auditors then finalize the scope dates, along with the test's population and sampling information. Upon completion this is submitted for  **Manager Review**. Approval is required **before any fieldwork begins**, so every test's work program is approved prior to execution. This ensure's adherence with IIA standard
+2. **In Progress**: on approval, Recap IA automatically creates the test's SharePoint folder and its pre-populated workpaper. Auditors execute the test, then record observations, which are submitted for CAE approval (with a return-for-rework loop).
+3. **Completed**: the auditor makes the [update decision](#pre-filled-from-the-control-library). Deciding whether any adjustments to the purpose/procedure update the control library's canonical standard.
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryBorderColor":"#16a34a","primaryTextColor":"#111827","lineColor":"#64748b","clusterBkg":"#f1f5f9","clusterBorder":"#64748b","titleColor":"#334155","edgeLabelBackground":"#e2e8f0","fontFamily":"ui-sans-serif, system-ui, sans-serif"},"flowchart":{"curve":"basis"}}}%%
@@ -51,7 +52,7 @@ When a test references a control, Recap IA pre-fills the test from the [control 
 
 | Control library field | Pre-fills on the Test |
 | --- | --- |
-| Standard Objective | Test Purpose |
+| Standard Purpose | Test Purpose |
 | Standard Procedure | Procedure |
 
 The auditor then tailors both to the engagement.
