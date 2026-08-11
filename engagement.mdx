@@ -11,33 +11,6 @@ The Engagement is the root case of every audit. It moves through six stages, spa
 
 ## Lifecycle
 
-<Steps>
-  <Step title="Create Audit Engagement">
-    Collect the engagement's details. On creation, Recap IA automatically creates the engagement's folder structure in SharePoint (if the [SharePoint integration](/sharepoint-fieldwork) is configured).
-  </Step>
-  <Step title="Planning">
-    Scope the engagement and build the risk matrix — engagement-specific risk records assessed for this audit. The CAE reviews the scope, and can send it back for rework. Once approved, Recap IA generates the **Planning Memo** as a PDF for final review before fieldwork begins.
-  </Step>
-  <Step title="Programming">
-    Risks embedded in the engagement are synced, and [**Tests**](/tests) are created as child cases — one per step of the audit program, each pre-filled from the control library and carrying its purpose, procedure, window and sampling plan.
-  </Step>
-  <Step title="Field Work">
-    Auditors execute their tests and complete workpapers. As each test's observations are recorded, the list is submitted and **approved by the CAE**. The engagement waits for all tests to be submitted and reviewed before moving on.
-  </Step>
-  <Step title="Reporting">
-    On the move into Reporting, an automation generates the draft **Audit Report** — pulling the engagement's fields, observations, and the status of action items (complete, risk accepted, in progress, overdue) — and places it in SharePoint. Auditors open it from the app to adjust formatting and text; from that point it's their responsibility to keep the deck aligned with the documentation. The CAE reviews, and can send it back to drafting, before the report is issued.
-  </Step>
-  <Step title="Tracking Action Items">
-    Management's action plans are tracked as [**Action Item**](/action-items) cases until each observation's actions are verified. Action items persist after the report is issued, so follow-up continues without reopening the audit.
-  </Step>
-</Steps>
-
-<Info>
-  **Report issuance locks the record.** When the report is issued, observations lock — condition, criteria, root cause, effect, rating and recommendation become immutable, with a CAE unlock (reason required, audit-trailed) for corrections. Action items and dispositions stay editable through follow-up.
-</Info>
-
-## Who does what
-
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryBorderColor":"#16a34a","primaryTextColor":"#111827","lineColor":"#64748b","clusterBkg":"#f1f5f9","clusterBorder":"#64748b","titleColor":"#334155","edgeLabelBackground":"#e2e8f0","fontFamily":"ui-sans-serif, system-ui, sans-serif"},"flowchart":{"curve":"basis"}}}%%
 flowchart LR
@@ -50,7 +23,7 @@ flowchart LR
     CE["Create<br/>engagement"]
     SC["Scoping"]
     RM["Risk matrix"]
-    CT[["Create tests<br/>(Test cases ↗)"]]
+    CT[["Create Tests for Risks"]]
     TR["Wait for Tests completion"]
     AR["Refine report"]
     TI[["Track action items<br/>(Action Item cases ↗)"]]
@@ -68,7 +41,28 @@ flowchart LR
   class CT,TI case
 ```
 
-**Double-bordered boxes are case boundaries** — the flow crosses into another case type that runs its own workflow: see the swimlanes on [Tests](/tests#lifecycle), [Evidence Requests](/evidence-requests#review-loop) and [Action Items](/action-items#lifecycle).
+**Double-bordered boxes are case boundaries**. Engagements involve other case type that each run their own workflow: see the swimlanes on [Tests](/tests#lifecycle), [Evidence Requests](/evidence-requests#review-loop) and [Action Items](/action-items#lifecycle).
+
+<Steps>
+  <Step title="Create Audit Engagement">
+    Collect the engagement's details. On creation, Recap IA automatically creates the engagement's folder structure in SharePoint (if the [SharePoint integration](/sharepoint-fieldwork) is configured).
+  </Step>
+  <Step title="Planning">
+    Scope the engagement and build the risk matrix — engagement-specific risk records assessed for this audit.  Upon submission,  CAE reviews the Engagement Plan. Once approved, Recap IA generates the **Planning Memo** as a PDF for final review before distribution to auditees.
+  </Step>
+  <Step title="Programming">
+    For the program, auditors are able to create Tests and map them to the Risks identified in the planning stage.  Test's represent the steps of the audit program.  Each test also relates to a control in the library and carries a purpose, procedure and sampling information.
+  </Step>
+  <Step title="Field Work">
+    Auditors execute their tests and complete workpapers. In each test case, auditor's draft the workpaper and log observations in RecapIA. After each test's fieldwork is complete the list of observations is submitted for review by the CAE. Once all fieldwork is complete the engagement moves to reporting.
+  </Step>
+  <Step title="Reporting">
+    On the move into Reporting, an automation generates a first draft of the **Audit Report**.  This uses the engagement's fields, observations, and the status of action items.  Auditors can open it from the app to review and finalize the report. Once completed, the CAE reviews the report before it is issued.
+  </Step>
+  <Step title="Tracking Action Items">
+    In response to observations Management action plans can be created at any time throughout the engagement. After the report is issued they can still be tracked through the engagement's case view. So follow-up can continue even after the report
+  </Step>
+</Steps>
 
 ## Key fields
 
