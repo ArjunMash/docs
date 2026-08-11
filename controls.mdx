@@ -1,9 +1,10 @@
 ---
 title: "Controls"
-description: "The control library: one clean, deduplicated set of controls reused across engagements"
 ---
 
-Controls live in a library, so the same control can be tested year over year without being re-entered — and so results accumulate against a stable record. The control library is categorised by business Function. When a test references a control, the library's standard objective and procedure [pre-fill the test](/tests#pre-filled-from-the-control-library). 
+Controls are stored in a library, allowing for the same control to be tested year over year without redundant details being re-entered. Also allowing results to accumulate against a stable record. The control library is categorised by business Function. 
+
+When a test references a control, the library's standard objective and tests procedures [pre-fill the test](/tests#pre-filled-from-the-control-library).
 
 ## Control fields
 
@@ -20,12 +21,12 @@ Controls live in a library, so the same control can be tested year over year wit
 | Control Owner | Reference | The process owner responsible for operating the control. |
 | Related Information Systems | Reference | The systems the control operates in. |
 
-## The library learns
+## Updating the library from a Test
 
-Pre-filling isn't one-way. When a test's pre-filled purpose or procedure gets adjusted during testing, the auditor decides at the end of the test whether the adjustments roll back into the library as the control's new canonical standard. The library stays current with how controls are actually tested — without every engagement's one-off tweak overwriting it.
+While controls pre-populate the procedures and purpose of a referenced Test, Recap still allows users to adjust the fields of that specific test case while maintaining the control-reference. This allows auditors the flexibility of test-specific procedures or temporary adjustments to testing. But, auditors are also able to push the updates as the control's new canonical standard. 
 
-## Duplicate detection
+## Fuzzy Duplicate detection
 
-A control library is only useful if it stays clean. When a new control is entered, Recap IA compares it against existing controls in the same function using AI-based fuzzy matching — catching duplicates that exact-match checks miss (reworded names, same control described two ways).
+With a large control library, it's easy to unintentionally create repeat entries (e.g. reworded names or same control described two ways). To keep the library clean, whenever a new control is entered, Recap IA compares the new entry's Name and Procedures against existing controls in the same Function using AI-based fuzzy matching.
 
-If a likely duplicate is found (high-confidence match), the auditor is shown the suggested existing control and chooses: use the existing entry, or override and create the new one anyway. The auditor always has the final say.
+If a likely duplicate is found (high-confidence match), the auditor is shown the suggested existing control and chooses: use the existing entry, or override and create the new one anyway. 
