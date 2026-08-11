@@ -1,5 +1,6 @@
 ---
 title: "Observations"
+description: "How findings are documented, rated, approved and locked"
 ---
 
 Observations (findings in the IIA standards) record deficiencies or gaps. Observations tend to stem from tests by default and reference the test that revealed them. Observations can also be created beyond testing (E.g. design deficiencies, missing control, something surfacing in a walkthrough). In these cases, they attach directly to the engagement.
@@ -25,24 +26,12 @@ The observation's `Risk Level` (High / Medium / Low) **is** the significance det
 
 `Action Item Required` defaults from the Risk Level but can be manually overridden. Medium and High classifications default to an action item being required. Observations with Action Item's required are later validated on the engagement level.
 
-## Management's position
-
-Management's response is captured on the observation: their written response, whether they agree with the finding (Agreed / Partially / Disagreed), and when it was discussed. Agreement with the _finding_ lives here; agreement with the _remediation plan_ lives on the [Action Item](/action-items) — management can accept one and dispute the other.
-
-## Disposition
-
-Every observation ends in one of:
-
-- **Action Item Created**
-- **Corrected During Fieldwork**
-- **Communicated to Management, No Plan Requested**
-- **Risk Accepted**
-- **Not Reported**
-
-A rationale is required whenever the value isn't "Action Item Created" — an unaddressed observation must be distinguishable from an unevaluated one.
-
 ## Approval and locking
 
 Observations are approved **within the test**: once all of a test's observations are recorded, the list is submitted and approved by the CAE.
 
-Observations stay editable through reporting — root cause and recommendation feasibility are developed with management and often aren't settled until late. They lock at **final report issuance**: condition, criteria, root cause, effect, rating and recommendation become immutable, while linked action items and disposition remain editable. A supervisor/CAE unlock exists for corrections — it requires a reason and writes an audit trail entry.
+Observations stay editable through reporting — root cause and recommendation feasibility are developed with management and thus are allowed to be adjusted up-to the point of the report's issuance. Observations are locked at **final report issuance**: condition, criteria, root cause, effect, rating and recommendation. Linked action items and disposition remain trackable. A supervisor/CAE unlock exists for corrections. 
+
+## Remediation
+
+Remediation of Observations are tracked through the [Action Item](/action-items) case flow.
