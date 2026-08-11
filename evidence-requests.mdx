@@ -1,27 +1,30 @@
 ---
 title: "Evidence Requests"
-description: "Requesting support from auditees and tracking it to fulfillment"
 ---
 
-Evidence Requests are how the audit team asks auditees for support — populations, sample documents, policies, explanations — and tracks what's outstanding.
+Evidence Requests are a way for auditors to request populations, sample documents, policies, explanations and easily track their status.
 
-Requests are created at the **engagement level** and linked to the **test(s) they support**. Because a request can serve several tests, the link is what makes review work: you can see outstanding requests by objective, and spot a test with no supporting evidence before sign-off.
+Requests are created at the **engagement level** and linked to the **test(s) they support**. 
 
 ## Fields
 
 | Field | Description |
 | --- | --- |
 | Description | What is being requested and why — including format, delivery and completeness expectations. |
-| Auditee | Who provides the evidence — they receive a magic-link email and upload directly, no account needed. |
+| Auditee | Who is responsible for providing the evidence |
 | Requester | Who on the audit team asked for it. |
-| Evidence Period | The period the requested records should cover (distinct from when testing happens). |
+| Evidence Period | The period the requested records should cover. |
 | Due Date | When the evidence is needed by. |
 | Supported Test(s) | The test(s) this request feeds. |
 | Disposition | The request's outcome, tracked to closure. |
 
+## Auditee Notification
+
+When an evidence request is created and assigned to an auditee they are notified and provided a link to access a Recap IA portal and upload the evidence. This allows auditors to easily track outstanding evidence requests and send automated evidence as due-dates approach or are exceeded.    
+
 ## Review loop
 
-The auditee uploads evidence through their magic-link portal; the audit team reviews it. If the evidence is rejected, **the rejected files are wiped** and the auditee is asked to resubmit.  In addition to security this prevents accumulated wrong versions, and the auditee can't be confused about which submission counts. Approval closes the request.
+The auditee uploads evidence through the portal; the audit team reviews it. If the evidence is rejected, **the rejected files are wiped** and the auditee is asked to resubmit. 
 
 <Note>
   To ensure security, auditees can only upload data and when resubmitting evidence, they cannot see previous submissions. Reducing risk of hijacked links.
@@ -31,7 +34,7 @@ The auditee uploads evidence through their magic-link portal; the audit team rev
 %%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryBorderColor":"#16a34a","primaryTextColor":"#111827","lineColor":"#64748b","clusterBkg":"#f1f5f9","clusterBorder":"#64748b","titleColor":"#334155","edgeLabelBackground":"#e2e8f0","fontFamily":"ui-sans-serif, system-ui, sans-serif"},"flowchart":{"curve":"basis"}}}%%
 flowchart LR
   subgraph AUD["Auditor"]
-    CR[["Create request<br/>linked to Test(s) ↗"]]
+    CR["Create request<br/>linked to Test(s)"]
     RV{"Review evidence"}
     DONE["Request closed"]
   end
@@ -39,13 +42,7 @@ flowchart LR
     UP["Upload evidence"]
     RS["Resubmit"]
   end
-  CR -- "magic-link email" --> UP --> RV
+  CR -- "email notification" --> UP --> RV
   RV -- "rejected — files wiped" --> RS --> RV
   RV -- "approved" --> DONE
-  classDef case fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
-  class CR case
 ```
-
-<Info>
-  Population specifications — source, filters, completeness verification — belong on the [Test](/tests#describing-the-population), not on the request. The request points at the test; the test defines the population.
-</Info>
